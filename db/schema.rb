@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20100724131029) do
     t.string "abbr"
     t.string "name"
     t.string "name_zen"
+    t.string "phonetic"
     t.string "color"
   end
 

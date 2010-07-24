@@ -11,29 +11,34 @@
     abbr:     P
     name:     Person/Place/Animal
     name_zen: 人物/場所/動物
+    phonetic: じんぶつ/ばしょ/どうぶつ
     color:    yellow
   o:
     id:       2
     abbr:     O
     name:     Object
     name_zen: 物体（もの）
+    phonetic: ぶったい
     color:    cyan
   a:
     id:       3
     abbr:     A
     name:     Action
     name_zen: 動作（うごき）
+    phonetic: どうさ
     color:    orange
   d:
     id:       4
     abbr:     D
     name:     Difficult
     name_zen: 難解（むずかしい）
+    phonetic: なんかい
     color:    lime
   ap:
     id:       5
     abbr:     AP
     name:     All Play
     name_zen: 全員問題
+    phonetic: ぜんいんもんだい
     color:    red
 

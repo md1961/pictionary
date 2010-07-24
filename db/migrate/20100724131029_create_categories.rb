@@ -4,6 +4,7 @@ class CreateCategories < ActiveRecord::Migration
       t.string :abbr
       t.string :name
       t.string :name_zen
+      t.string :phonetic
       t.string :color
     end
   end
