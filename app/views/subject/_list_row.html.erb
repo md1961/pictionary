@@ -10,7 +10,9 @@
                                : subject.send(:attributes)[column_name] -%>
         <%= link_to_if is_id, value, :action => 'edit', :id => subject %>
       <% else -%>
-        <% if is_category -%>
+        <% if @subject.new_record? && is_id -%>
+          <%= nil %>
+        <% elsif is_category -%>
           <%= f.collection_select :category_id, Category.all, :id, :name_zen %>
         <% else -%>
           <% size = is_id ? 4 : 30 -%>

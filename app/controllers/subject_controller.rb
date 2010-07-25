@@ -37,4 +37,18 @@ class SubjectController < ApplicationController
       render :action => 'edit'
     end
   end
+
+  def new
+    prepare_for_list
+    @subjects.insert(0, Subject.new)
+    @subject = Subject.new
+
+    prepare_for_render_new
+  end
+
+    def prepare_for_render_new
+      @page_title = "お題の作成"
+      @page_title_size = 3
+    end
+    private :prepare_for_render_new
 end
