@@ -11,7 +11,7 @@
     <% unless shows_form -%>
       <%= render :partial => 'list_row', :locals => {:subject => subject, :shows_form => shows_form} %>
     <% else -%>
-      <% form_for :subject, :url => {:action => 'edit'} do |f| -%>
+      <% form_for :subject, :url => {:action => action} do |f| -%>
         <% unless (err_msg = f.error_messages).blank? -%>
           <tr>
             <td colspan="<%= @column_names.size %>">
