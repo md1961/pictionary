@@ -1,21 +1,3 @@
 
-<table class="table_base">
-  <tr>
-    <% @column_names.each do |column_name| -%>
-      <th><%= Subject.human_attribute_name(column_name) %></th>
-    <% end -%>
-  </tr>
-
-  <% @subjects.each do |subject| -%>
-    <tr>
-      <% @column_names.each do |column_name| -%>
-        <% align = column_name == 'id' ? 'right' : 'left' -%>
-        <td align="<%= align %>">
-          <%= column_name == 'category_id' ? subject.category.name_zen \
-                                           : subject.send(:attributes)[column_name] %>
-        </td>
-      <% end -%>
-    </tr>
-  <% end -%>
-</table>
+<%= render :partial => 'list' %>
 
