@@ -9,23 +9,8 @@
   <% @subjects.each do |subject| -%>
     <tr>
       <% @column_names.each do |column_name| -%>
-        <% is_id = column_name == 'id'
-           align = is_id ? 'right' : 'left'
-           is_category = column_name == 'category_id' -%>
-        <td align="<%= align %>">
-          <% if @subject && subject.id == @subject.id -%>
-            <% if is_category -%>
-              <%= f.select column_name, Category.find(:all).map { |p| [p.name_zen, p.id] } %>
-            <% else -%>
-              <% size = is_id ? 4 : 30 -%>
-              <%= f.text_field column_name, :size => size %>
-            <% end -%>
-          <% else -%>
-            <% value = is_category ? subject.category.name_zen \
-                                   : subject.send(:attributes)[column_name] -%>
-            <%= link_to_if is_id, value, :action => 'edit', :id => subject %>
-          <% end -%>
-        </td>
+        <%= render :partial => 'list_row',
+                   :locals  => {:subject => subject, :column_name => column_name} %>
       <% end -%>
     </tr>
   <% end -%>
