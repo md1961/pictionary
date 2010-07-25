@@ -1,4 +1,17 @@
 class Subject < ActiveRecord::Base
   belongs_to :category
 
+  HUMANIZED_KEY_NAMES = {
+    'id'          => 'ID',
+    'name'        => '英語名',
+    'name_zen'    => '日本語名',
+    'phonetic'    => 'ふりがな',
+    'category_id' => 'ジャンル',
+  }
+
+  class << self
+    def human_attribute_name(name)
+      return HUMANIZED_KEY_NAMES[name] || super
+    end
+  end
 end
