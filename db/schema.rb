@@ -20,10 +20,10 @@ ActiveRecord::Schema.define(:version => 20100725004458) do
   end
 
   create_table "subjects", :force => true do |t|
-    t.string "name"
-    t.string "name_zen"
-    t.string "phonetic"
-    t.string "category_id"
+    t.string  "name"
+    t.string  "name_zen"
+    t.string  "phonetic"
+    t.integer "category_id"
   end
 
 end

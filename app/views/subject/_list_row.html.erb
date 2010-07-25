@@ -1,21 +1,21 @@
 
 <tr>
   <% @column_names.each do |column_name| -%>
-    <% is_id = column_name == 'id'
-       align = is_id ? 'right' : 'left'
-       is_category = column_name == 'category_id' -%>
+    <% is_id       = column_name == 'id'
+       is_category = column_name == 'category_id'
+       align = is_id ? 'right' : 'left' -%>
     <td align="<%= align %>">
-      <% if shows_form -%>
+      <% unless shows_form -%>
+        <% value = is_category ? subject.category.name_zen \
+                               : subject.send(:attributes)[column_name] -%>
+        <%= link_to_if is_id, value, :action => 'edit', :id => subject %>
+      <% else -%>
         <% if is_category -%>
-          <%= f.select column_name, Category.find(:all).map { |p| [p.name_zen, p.id] } %>
+          <%= f.collection_select :category_id, Category.all, :id, :name_zen %>
         <% else -%>
           <% size = is_id ? 4 : 30 -%>
           <%= f.text_field column_name, :size => size %>
         <% end -%>
-      <% else -%>
-        <% value = is_category ? subject.category.name_zen \
-                               : subject.send(:attributes)[column_name] -%>
-        <%= link_to_if is_id, value, :action => 'edit', :id => subject %>
       <% end -%>
     </td>
   <% end -%>

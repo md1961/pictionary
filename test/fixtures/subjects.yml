@@ -5,3 +5,25 @@
 #
 # two:
 #   column: value
+
+  dog:
+    id : 1
+    name : dog
+    name_zen : 犬
+    phonetic : いぬ
+    category_id : 1
+
+  remote_controller:
+    id : 2
+    name : remote controller
+    name_zen : リモコン
+    phonetic : 
+    category_id : 2
+
+  kiss:
+    id : 3
+    name : kiss
+    name_zen : キスする
+    phonetic : 
+    category_id : 3
+
