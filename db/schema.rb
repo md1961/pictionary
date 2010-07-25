@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100724131029) do
+ActiveRecord::Schema.define(:version => 20100725004458) do
 
   create_table "categories", :force => true do |t|
     t.string "abbr"
@@ -17,6 +17,13 @@ ActiveRecord::Schema.define(:version => 20100724131029) do
     t.string "name_zen"
     t.string "phonetic"
     t.string "color"
+  end
+
+  create_table "subjects", :force => true do |t|
+    t.string "name"
+    t.string "name_zen"
+    t.string "phonetic"
+    t.string "category_id"
   end
 
 end
