@@ -1,0 +1,17 @@
+
+<table class="table_base">
+  <tr>
+    <% @column_names.each do |column_name| -%>
+      <th><%= column_name.titleize %></th>
+    <% end -%>
+  </tr>
+
+  <% @subjects.each do |subject| -%>
+    <tr>
+      <% @column_names.each do |column_name| -%>
+        <td><%= column_name == 'category_id' ? subject.category.name_zen : subject.send(:attributes)[column_name] %></td>
+      <% end -%>
+    </tr>
+  <% end -%>
+</table>
+
