@@ -1,8 +1,3 @@
 
-<% form_for :subject, :url => {:action => 'edit'} do |f| -%>
-  <%= render :partial => 'list', :locals => {:f => f, :action => 'edit'} %>
-
-  <%= submit_tag %>
-  <%= link_to 'Cancel', :action => 'list' %>
-<% end -%>
+<%= render :partial => 'list', :locals => {:action => 'edit'} %>
 

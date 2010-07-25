@@ -1,6 +1,8 @@
 class Subject < ActiveRecord::Base
   belongs_to :category
 
+  validates_uniqueness_of :name, :name_zen
+
   HUMANIZED_KEY_NAMES = {
     'id'          => 'ID',
     'name'        => '英語名',
