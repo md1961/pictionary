@@ -40,15 +40,26 @@ class SubjectController < ApplicationController
 
   def new
     prepare_for_list
-    @subjects.insert(0, Subject.new)
     @subject = Subject.new
 
     prepare_for_render_new
   end
 
     def prepare_for_render_new
+      @subjects.insert(0, Subject.new)
       @page_title = "お題の作成"
       @page_title_size = 3
     end
     private :prepare_for_render_new
+
+  def create
+    @subject = Subject.new(params[:subject])
+    if @subject.save
+      redirect_to :action => 'list'
+    else
+      prepare_for_list
+      prepare_for_render_new
+      render :action => 'new'
+    end
+  end
 end
