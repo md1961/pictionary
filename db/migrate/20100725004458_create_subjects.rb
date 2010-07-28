@@ -5,6 +5,8 @@ class CreateSubjects < ActiveRecord::Migration
       t.string  :name_zen
       t.string  :phonetic
       t.integer :category_id
+      t.boolean :is_active  , :null => false, :default => true
+      t.boolean :used       , :null => false, :default => false
     end
   end
 

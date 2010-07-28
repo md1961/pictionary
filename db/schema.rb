@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20100725004458) do
     t.string  "name_zen"
     t.string  "phonetic"
     t.integer "category_id"
+    t.boolean "is_active",   :default => true,  :null => false
+    t.boolean "used",        :default => false, :null => false
   end
 
 end

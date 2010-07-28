@@ -27,3 +27,17 @@
     phonetic : 
     category_id : 3
 
+  uninhabited_island:
+    id : 4
+    name : uninhabited island
+    name_zen : 無人島
+    phonetic : むじんとう
+    category_id : 4
+
+  mikan:
+    id : 5
+    name : mikan
+    name_zen : みかん
+    phonetic : 
+    category_id : 5
+
