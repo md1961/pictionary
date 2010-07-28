@@ -19,6 +19,19 @@ class Subject < ActiveRecord::Base
     end
   end
 
+  def self.count_by_category
+    column_category = 'category_id'
+    column_count    = 'COUNT(*)'
+    sql = "SELECT #{column_category}, #{column_count} FROM subjects GROUP BY #{column_category}"
+    hashes =  connection.execute(sql).all_hashes
+    return hashes.inject(Hash.new) { |h, h_row|
+      category_id = Integer(h_row[column_category])
+      count       = Integer(h_row[column_count   ])
+      h[category_id] = count
+      h
+    }
+  end
+
   def active?
     return is_active
   end

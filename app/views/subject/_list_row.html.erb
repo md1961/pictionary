@@ -17,7 +17,7 @@
         <% if @subject.new_record? && is_id -%>
           <%= nil %>
         <% elsif is_category -%>
-          <%= f.collection_select :category_id, Category.all, :id, :name_zen %>
+          <%= f.collection_select :category_id, @categories, :id, :name_zen %>
         <% elsif is_isactive -%>
           <%= f.select :is_active, [['使用中', true], ['未使用', false]] %>
         <% else -%>

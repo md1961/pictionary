@@ -8,8 +8,10 @@ class SubjectController < ApplicationController
   end
 
     def prepare_for_list
-      @subjects = Subject.find(:all)
-      @column_names  = Subject.columns.map(&:name) - %w(used)
+      @subjects            = Subject.find(:all)
+      @column_names        = Subject.columns.map(&:name) - %w(used)
+      @h_count_by_category = Subject.count_by_category
+      @categories          = Category.find(:all, :order => "id")
     end
     private :prepare_for_list
 

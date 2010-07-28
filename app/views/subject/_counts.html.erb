@@ -1,0 +1,15 @@
+
+<table class="table_base">
+  <tr>
+    <th>カテゴリー</th>
+    <th>個数</th>
+  </tr>
+
+  <% @categories.each do |category| -%>
+    <tr>
+      <td>              <%= category.name_zen %>                </td>
+      <td align="right"><%= @h_count_by_category[category.id] %></td>
+    </tr>
+  <% end -%>
+</table>
+
