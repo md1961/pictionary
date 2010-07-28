@@ -1,19 +1,25 @@
 
-<tr>
+<% tr_class = defined?(subject) && ! subject.active? ? 'not_used' : '' -%>
+
+<tr class="<%= tr_class %>">
   <% @column_names.each do |column_name| -%>
     <% is_id       = column_name == 'id'
        is_category = column_name == 'category_id'
-       align = is_id ? 'right' : 'left' -%>
+       is_isactive = column_name == 'is_active'
+       align = is_id ? 'right' : is_isactive ? 'center' : 'left' -%>
     <td align="<%= align %>">
       <% unless shows_form -%>
-        <% value = is_category ? subject.category.name_zen \
-                               : subject.send(:attributes)[column_name] -%>
+        <% value = is_category ?  subject.category.name_zen \
+                 : is_isactive ? (subject.active? ? '-' : '未使用') \
+                               :  subject.send(:attributes)[column_name] -%>
         <%= link_to_if is_id, value, :action => 'edit', :id => subject %>
       <% else -%>
         <% if @subject.new_record? && is_id -%>
           <%= nil %>
         <% elsif is_category -%>
           <%= f.collection_select :category_id, Category.all, :id, :name_zen %>
+        <% elsif is_isactive -%>
+          <%= f.select :is_active, [['使用中', true], ['未使用', false]] %>
         <% else -%>
           <% size = is_id ? 4 : 30 -%>
           <%= f.text_field column_name, :size => size %>

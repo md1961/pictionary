@@ -9,7 +9,7 @@ class SubjectController < ApplicationController
 
     def prepare_for_list
       @subjects = Subject.find(:all)
-      @column_names  = Subject.columns.map(&:name)
+      @column_names  = Subject.columns.map(&:name) - %w(used)
     end
     private :prepare_for_list
 

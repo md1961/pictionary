@@ -10,11 +10,16 @@ class Subject < ActiveRecord::Base
     'name_zen'    => '日本語名',
     'phonetic'    => 'ふりがな',
     'category_id' => 'ジャンル',
+    'is_active'   => '使用状況',
   }
 
   class << self
     def human_attribute_name(name)
       return HUMANIZED_KEY_NAMES[name] || super
     end
+  end
+
+  def active?
+    return is_active
   end
 end
