@@ -1,8 +1,8 @@
 class Subject < ActiveRecord::Base
   belongs_to :category
 
-  validates_presence_of   :name, :name_zen, :phonetic
-  validates_uniqueness_of :name, :name_zen, :phonetic
+  validates_presence_of   :name, :name_zen, :phonetic, :message => "が必要です"
+  validates_uniqueness_of :name, :name_zen, :phonetic, :message => "が重複しています"
 
   HUMANIZED_KEY_NAMES = {
     'id'          => 'ID',

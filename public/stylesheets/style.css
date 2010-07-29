@@ -1,4 +1,9 @@
 
+.table_base th {
+  color: white;
+  background-color: #666666;
+}
+
 #table_subject_list .not_used td {
   background-color: magenta;
 }

@@ -27,7 +27,7 @@
           <td colspan="<%= @column_names.size %>">
             <%= submit_tag %>
             <%= '&nbsp;' * 4 %>
-            <%= link_to 'Cancel', :action => 'list' %>
+            <%= link_to 'Cancel', :action => 'list', :category_id => @category_id %>
           </td>
         </tr>
       <% end -%>
