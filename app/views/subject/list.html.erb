@@ -1,6 +1,14 @@
 
 <p>
-  <%= link_to 'お題の新規作成', :action => 'new' %>
+  <%= link_to 'お題の新規作成', :action => 'new', :category_id => @category_id %>
+
+  <%= '&nbsp;' * 4 %>
+  <%= link_to 'すべて', :action => 'list' %>
+
+  <% @categories.each do |category| -%>
+    <%= '&nbsp;' * 1 %>
+    <%= link_to category.name_zen, :action => 'list', :category_id => category.id %>
+  <% end -%>
 </p>
 
 <%= render :partial => 'list' %>

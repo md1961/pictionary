@@ -12,7 +12,7 @@
         <% value = is_category ?  subject.category.name_zen \
                  : is_isactive ? (subject.active? ? '-' : '未使用') \
                                :  subject.send(:attributes)[column_name] -%>
-        <%= link_to_if is_id, value, :action => 'edit', :id => subject %>
+        <%= link_to_if is_id, value, :action => 'edit', :id => subject, :category_id => @category_id %>
       <% else -%>
         <% if @subject.new_record? && is_id -%>
           <%= nil %>
