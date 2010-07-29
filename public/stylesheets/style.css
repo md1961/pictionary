@@ -3,3 +3,11 @@
   background-color: magenta;
 }
 
+#table_subject_list {
+  float: left;
+  margin-right: 40px;
+}
+
+#table_subject_counts {
+}
+

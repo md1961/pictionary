@@ -7,8 +7,10 @@ class SubjectController < ApplicationController
     @page_title_size = 3
   end
 
+    ORDER = "phonetic"
+
     def prepare_for_list
-      @subjects            = Subject.find(:all)
+      @subjects            = Subject.find(:all, :order => ORDER)
       @column_names        = Subject.columns.map(&:name) - %w(used)
       @h_count_by_category = Subject.count_by_category
       @categories          = Category.find(:all, :order => "id")
