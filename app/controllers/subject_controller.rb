@@ -11,6 +11,7 @@ class SubjectController < ApplicationController
 
     def prepare_for_list(params)
       @category_id = params[:category_id]
+      @category_id = Integer(@category_id) if @category_id
       conditions = @category_id.nil? ? [] : ["category_id = ?", @category_id]
       @subjects            = Subject.find(:all, :conditions => conditions, :order => ORDER)
       @column_names        = Subject.columns.map(&:name) - %w(used)

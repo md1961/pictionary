@@ -5,12 +5,16 @@
   </font>
 
   <%= '&nbsp;' * 4 %>
-  <%= link_to 'すべて', :action => 'list' %>
+  <span style="<%= @category_id ? '' : 'font-weight: bold' %>">
+    <%= link_to_if @category_id, 'すべて', :action => 'list' %>
+  </span>
 
   <% @categories.each do |category| -%>
     <%= '&nbsp;' * 1 %>
-    <%= link_to_unless category.id == @category_id,
-            category.name_zen, :action => 'list', :category_id => category.id %>
+    <span style="<%= category.id != @category_id ? '' : 'font-weight: bold' %>">
+      <%= link_to_unless category.id == @category_id,
+                  category.name_zen, :action => 'list', :category_id => category.id %>
+    </span>
   <% end -%>
 </p>
 
