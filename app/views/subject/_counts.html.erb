@@ -9,7 +9,7 @@
 
   <% @categories.each do |category| -%>
     <% count = @h_count_by_category[category.id]
-       total_count += count -%>
+       total_count += count                      -%>
     <tr>
       <td>              <%= category.name_zen %></td>
       <td align="right"><%= count %>            </td>
@@ -17,8 +17,8 @@
   <% end -%>
 
   <tr>
-    <td align="center">合計              </td>
-    <td align="right" ><%= total_count %></td>
+    <td align="center"><%= justify('合計', 4) %></td>
+    <td align="right" ><%= total_count %>       </td>
   </tr>
 </table>
 
