@@ -5,11 +5,20 @@
     <th>個数</th>
   </tr>
 
+  <% total_count = 0 -%>
+
   <% @categories.each do |category| -%>
+    <% count = @h_count_by_category[category.id]
+       total_count += count -%>
     <tr>
-      <td>              <%= category.name_zen %>                </td>
-      <td align="right"><%= @h_count_by_category[category.id] %></td>
+      <td>              <%= category.name_zen %></td>
+      <td align="right"><%= count %>            </td>
     </tr>
   <% end -%>
+
+  <tr>
+    <td align="center">合計              </td>
+    <td align="right" ><%= total_count %></td>
+  </tr>
 </table>
 
