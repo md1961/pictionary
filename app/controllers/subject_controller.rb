@@ -36,7 +36,7 @@ class SubjectController < ApplicationController
     h_subject = params[:subject]
     @subject = Subject.find(h_subject[:id])
     if @subject.update_attributes(h_subject)
-      redirect_to :action => 'list', :category_id => params[:category_id]
+      redirect_to :action => 'list', :category_id => @subject.category_id
     else
       prepare_for_list(params)
       prepare_for_render_edit
@@ -62,7 +62,7 @@ class SubjectController < ApplicationController
   def create
     @subject = Subject.new(params[:subject])
     if @subject.save
-      redirect_to :action => 'list', :category_id => params[:category_id]
+      redirect_to :action => 'list', :category_id => @subject.category_id
     else
       prepare_for_list(params)
       prepare_for_render_new
