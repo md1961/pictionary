@@ -6,38 +6,803 @@
 # two:
 #   column: value
 
-  dog:
-    id : 1
-    name : dog
-    name_zen : 犬
-    phonetic : いぬ
-    category_id : 1
-
-  remote_controller:
-    id : 2
-    name : remote controller
-    name_zen : リモコン
-    phonetic : 
-    category_id : 2
-
-  kiss:
-    id : 3
-    name : kiss
-    name_zen : キスする
-    phonetic : 
-    category_id : 3
-
-  uninhabited_island:
-    id : 4
-    name : uninhabited island
-    name_zen : 無人島
-    phonetic : むじんとう
-    category_id : 4
-
-  mikan:
-    id : 5
-    name : mikan
-    name_zen : みかん
-    phonetic : 
-    category_id : 5
-
+  id_1:
+    id: 1
+    name: dog
+    name_zen: 犬
+    phonetic: いぬ
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_2:
+    id: 2
+    name: remote controller
+    name_zen: リモコン
+    phonetic: りもこん
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_3:
+    id: 3
+    name: kiss
+    name_zen: キスする
+    phonetic: きすする
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_4:
+    id: 4
+    name: uninhabited island
+    name_zen: 無人島
+    phonetic: むじんとう
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_5:
+    id: 5
+    name: mikan
+    name_zen: みかん
+    phonetic: みかん
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_6:
+    id: 6
+    name: cat
+    name_zen: 猫
+    phonetic: ねこ
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_7:
+    id: 7
+    name: panda
+    name_zen: パンダ
+    phonetic: ぱんだ
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_8:
+    id: 8
+    name: Wii
+    name_zen: Wii
+    phonetic: うぃー
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_9:
+    id: 9
+    name: rice bowl
+    name_zen: お茶碗
+    phonetic: おちゃわん
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_10:
+    id: 10
+    name: book
+    name_zen: 本
+    phonetic: ほん
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_11:
+    id: 11
+    name: carry
+    name_zen: 運ぶ
+    phonetic: はこぶ
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_12:
+    id: 12
+    name: run
+    name_zen: 走る
+    phonetic: はしる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_13:
+    id: 13
+    name: walk
+    name_zen: 歩く
+    phonetic: あるく
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_14:
+    id: 14
+    name: detective
+    name_zen: 探偵
+    phonetic: たんてい
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_15:
+    id: 15
+    name: board game
+    name_zen: ボードゲーム
+    phonetic: ぼーどげーむ
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_16:
+    id: 16
+    name: practice
+    name_zen: 練習
+    phonetic: れんしゅう
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_17:
+    id: 17
+    name: go
+    name_zen: 囲碁
+    phonetic: いご
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_18:
+    id: 18
+    name: soccer
+    name_zen: サッカー
+    phonetic: さっかー
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_19:
+    id: 19
+    name: pokemon
+    name_zen: ポケモン
+    phonetic: ぽけもん
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_20:
+    id: 20
+    name: house
+    name_zen: 家
+    phonetic: いえ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_21:
+    id: 21
+    name: sengawa
+    name_zen: 仙川
+    phonetic: せんがわ
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_22:
+    id: 22
+    name: Japan
+    name_zen: 日本
+    phonetic: にほん
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_23:
+    id: 23
+    name: marathon
+    name_zen: マラソン
+    phonetic: まらそん
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_24:
+    id: 24
+    name: fireman
+    name_zen: 消防士
+    phonetic: しょうぼうし
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_25:
+    id: 25
+    name: horse
+    name_zen: 馬
+    phonetic: うま
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_26:
+    id: 26
+    name: zebra
+    name_zen: シマウマ
+    phonetic: しまうま
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_27:
+    id: 27
+    name: Nintendo DS
+    name_zen: ニンテンドーDS
+    phonetic: にんてんどーでぃーえす
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_28:
+    id: 28
+    name: DVD
+    name_zen: DVD
+    phonetic: でぃーぶいでぃー
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_29:
+    id: 29
+    name: climb
+    name_zen: 登る
+    phonetic: のぼる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_30:
+    id: 30
+    name: descend
+    name_zen: 下る
+    phonetic: くだる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_31:
+    id: 31
+    name: chair
+    name_zen: 椅子
+    phonetic: いす
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_32:
+    id: 32
+    name: table
+    name_zen: テーブル
+    phonetic: てーぶる
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_33:
+    id: 33
+    name: police
+    name_zen: 警察
+    phonetic: けいさつ
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_34:
+    id: 34
+    name: desk
+    name_zen: 机
+    phonetic: つくえ
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_35:
+    id: 35
+    name: shogi
+    name_zen: 将棋
+    phonetic: しょうぎ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_36:
+    id: 36
+    name: hospital
+    name_zen: 病院
+    phonetic: びょういん
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_37:
+    id: 37
+    name: Canada
+    name_zen: カナダ
+    phonetic: かなだ
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_38:
+    id: 38
+    name: throw
+    name_zen: 投げる
+    phonetic: なげる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_39:
+    id: 39
+    name: cry
+    name_zen: 泣く
+    phonetic: なく
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_40:
+    id: 40
+    name: key
+    name_zen: 鍵
+    phonetic: かぎ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_41:
+    id: 41
+    name: the earth
+    name_zen: 地球
+    phonetic: ちきゅう
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_42:
+    id: 42
+    name: turtle
+    name_zen: 亀
+    phonetic: かめ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_43:
+    id: 43
+    name: lion
+    name_zen: ライオン
+    phonetic: らいおん
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_44:
+    id: 44
+    name: cheetah
+    name_zen: チーター
+    phonetic: ちーたー
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_45:
+    id: 45
+    name: wall
+    name_zen: 壁
+    phonetic: かべ
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_46:
+    id: 46
+    name: king
+    name_zen: 王様
+    phonetic: おうさま
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_47:
+    id: 47
+    name: queen
+    name_zen: 女王
+    phonetic: じょおう
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_48:
+    id: 48
+    name: tree
+    name_zen: 木
+    phonetic: き
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_49:
+    id: 49
+    name: washbowl
+    name_zen: 洗面器
+    phonetic: せんめんき
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_50:
+    id: 50
+    name: washroom
+    name_zen: トイレ
+    phonetic: といれ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_51:
+    id: 51
+    name: lie
+    name_zen: 寝る
+    phonetic: ねる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_52:
+    id: 52
+    name: sleep
+    name_zen: 眠る
+    phonetic: ねむる
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_53:
+    id: 53
+    name: fly
+    name_zen: 飛ぶ
+    phonetic: とぶ
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_54:
+    id: 54
+    name: listen
+    name_zen: 聞く
+    phonetic: きく
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_55:
+    id: 55
+    name: talk
+    name_zen: しゃべる
+    phonetic: しゃべる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_56:
+    id: 56
+    name: shovel
+    name_zen: シャベル
+    phonetic: しゃべる
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_57:
+    id: 57
+    name: bucket
+    name_zen: バケツ
+    phonetic: ばけつ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_58:
+    id: 58
+    name: color
+    name_zen: 色
+    phonetic: いろ
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_59:
+    id: 59
+    name: calendar
+    name_zen: カレンダー
+    phonetic: かれんだー
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_60:
+    id: 60
+    name: garbage
+    name_zen: ごみ
+    phonetic: ごみ
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_61:
+    id: 61
+    name: paper
+    name_zen: 紙
+    phonetic: かみ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_62:
+    id: 62
+    name: church
+    name_zen: 教会
+    phonetic: きょうかい
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_63:
+    id: 63
+    name: pizza
+    name_zen: ピザ
+    phonetic: ぴざ
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_64:
+    id: 64
+    name: rice
+    name_zen: 米
+    phonetic: こめ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_65:
+    id: 65
+    name: animal
+    name_zen: 動物
+    phonetic: どうぶつ
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_66:
+    id: 66
+    name: signal
+    name_zen: 信号
+    phonetic: しんごう
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_67:
+    id: 67
+    name: dance
+    name_zen: 踊る
+    phonetic: おどる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_68:
+    id: 68
+    name: tenniz
+    name_zen: テニス
+    phonetic: てにす
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_69:
+    id: 69
+    name: ship
+    name_zen: 船
+    phonetic: ふね
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_70:
+    id: 70
+    name: pistol
+    name_zen: ピストル
+    phonetic: ぴすとる
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_71:
+    id: 71
+    name: offense
+    name_zen: 攻撃
+    phonetic: こうげき
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_72:
+    id: 72
+    name: defense
+    name_zen: 守備
+    phonetic: しゅび
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_73:
+    id: 73
+    name: swim
+    name_zen: 泳ぐ
+    phonetic: およぐ
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_74:
+    id: 74
+    name: look
+    name_zen: 見る
+    phonetic: みる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_75:
+    id: 75
+    name: pilot
+    name_zen: パイロット
+    phonetic: ぱいろっと
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_76:
+    id: 76
+    name: water
+    name_zen: 水
+    phonetic: みず
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_77:
+    id: 77
+    name: television
+    name_zen: テレビ
+    phonetic: てれび
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_78:
+    id: 78
+    name: railroad station
+    name_zen: 駅
+    phonetic: えき
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_79:
+    id: 79
+    name: Shuhei
+    name_zen: 秀平
+    phonetic: しゅうへい
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_80:
+    id: 80
+    name: the rest
+    name_zen: 余り
+    phonetic: あまり
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_81:
+    id: 81
+    name: hit
+    name_zen: 打つ
+    phonetic: うつ
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_82:
+    id: 82
+    name: open
+    name_zen: 開く
+    phonetic: ひらく
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_83:
+    id: 83
+    name: close
+    name_zen: 閉める
+    phonetic: しめる
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_84:
+    id: 84
+    name: picture
+    name_zen: 写真
+    phonetic: しゃしん
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_85:
+    id: 85
+    name: video
+    name_zen: ビデオ
+    phonetic: びでお
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_86:
+    id: 86
+    name: comics
+    name_zen: 漫画
+    phonetic: まんが
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_87:
+    id: 87
+    name: potato
+    name_zen: じゃがいも
+    phonetic: じゃがいも
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_88:
+    id: 88
+    name: forest
+    name_zen: 森
+    phonetic: もり
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_89:
+    id: 89
+    name: department store
+    name_zen: デパート
+    phonetic: でぱーと
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_90:
+    id: 90
+    name: glasses
+    name_zen: 眼鏡
+    phonetic: めがね
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_91:
+    id: 91
+    name: fish
+    name_zen: 魚
+    phonetic: さかな
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_92:
+    id: 92
+    name: curry and rice
+    name_zen: カレーライス
+    phonetic: かれーらいす
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_93:
+    id: 93
+    name: lake
+    name_zen: 湖
+    phonetic: みずうみ
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_94:
+    id: 94
+    name: camel
+    name_zen: らくだ
+    phonetic: らくだ
+    category_id: 5
+    is_active: 1
+    used: 0
+  id_95:
+    id: 95
+    name: tissues
+    name_zen: ティッシュ
+    phonetic: てぃっしゅ
+    category_id: 2
+    is_active: 1
+    used: 0
+  id_96:
+    id: 96
+    name: giraffe
+    name_zen: きりん
+    phonetic: きりん
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_97:
+    id: 97
+    name: Kintaro
+    name_zen: 金太郎
+    phonetic: きんたろう
+    category_id: 1
+    is_active: 1
+    used: 0
+  id_98:
+    id: 98
+    name: chase
+    name_zen: 追いかける
+    phonetic: おいかける
+    category_id: 3
+    is_active: 1
+    used: 0
+  id_99:
+    id: 99
+    name: history
+    name_zen: 歴史
+    phonetic: れきし
+    category_id: 4
+    is_active: 1
+    used: 0
+  id_100:
+    id: 100
+    name: garlic
+    name_zen: にんにく
+    phonetic: にんにく
+    category_id: 4
+    is_active: 1
+    used: 0
