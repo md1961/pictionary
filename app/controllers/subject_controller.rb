@@ -54,7 +54,8 @@ class SubjectController < ApplicationController
 
     def prepare_for_render_new
       @subjects.insert(0, Subject.new)
-      @page_title = "お題の作成"
+      @page_title  = "お題の作成"
+      @page_title += "（#{Category.find(@category_id).name_zen}）" if @category_id
       @page_title_size = 3
     end
     private :prepare_for_render_new

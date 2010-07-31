@@ -1,0 +1,19 @@
+
+<font size="+2">
+  <%= link_to 'お題の新規作成', :action => 'new', :category_id => @category_id %>
+</font>
+<%= '&nbsp;' * 4 %>
+
+<% @categories.each do |category| -%>
+  <span style="<%= category.id != @category_id ? '' : 'font-weight: bold' %>">
+    <%= link_to_unless category.id == @category_id,
+                category.name_zen, :action => 'list', :category_id => category.id %>
+  </span>
+  <%= '&nbsp;' * 1 %>
+<% end -%>
+
+<%= '&nbsp;' * 1 %>
+<span style="<%= @category_id ? '' : 'font-weight: bold' %>">
+  <%= link_to_if @category_id, 'すべて', :action => 'list' %>
+</span>
+
