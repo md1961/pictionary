@@ -3,6 +3,11 @@
   <li>
     <%= link_to 'ゲーム開始', :action => 'start' %>
   </li>
+  <% if @shows_link_to_suspended_game -%>
+    <li>
+      <%= link_to 'ゲーム再開', :action => 'start', :resuming_game => 1 %>
+    </li>
+  <% end -%>
   <li>
     <%= link_to 'お題のリスト／編集／新規作成', :controller => 'subject', :action => 'list' %>
   </li>

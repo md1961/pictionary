@@ -1,17 +1,29 @@
 class GameController < ApplicationController
 
   def index
+    @shows_link_to_suspended_game = suspended_game_exist?
+
     @page_title = "トップページ"
   end
 
+    def suspended_game_exist?
+      return used_subjects.size > 0
+    end
+    private :suspended_game_exist?
+
+    def used_subjects
+      return Subject.find(:all, :conditions => "used = 1")
+    end
+    private :used_subjects
+
   def start
-    clear_subject_used
+    clear_subject_used unless params[:resuming_game] == '1'
 
     redirect_to :action => 'turn'
   end
 
     def clear_subject_used
-      Subject.find(:all, :conditions => "used = 1").each do |subject|
+      used_subjects.each do |subject|
         subject.used = false
         subject.save
       end
