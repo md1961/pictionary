@@ -4,7 +4,6 @@ class SubjectController < ApplicationController
     prepare_for_list(params)
 
     @page_title = "お題のリスト"
-    @page_title_size = 3
   end
 
     ORDER = "phonetic"
@@ -28,7 +27,6 @@ class SubjectController < ApplicationController
 
     def prepare_for_render_edit
       @page_title = "お題「#{@subject.name_zen}」の編集"
-      @page_title_size = 3
     end
     private :prepare_for_render_edit
 
@@ -56,7 +54,6 @@ class SubjectController < ApplicationController
       @subjects.insert(0, Subject.new)
       @page_title  = "お題の作成"
       @page_title += "（#{Category.find(@category_id).name_zen}）" if @category_id
-      @page_title_size = 3
     end
     private :prepare_for_render_new
 

@@ -1,8 +1,11 @@
 class Subject < ActiveRecord::Base
   belongs_to :category
 
-  validates_presence_of   :name, :name_zen, :phonetic, :message => "が必要です"
-  validates_uniqueness_of :name, :name_zen,            :message => "が重複しています"
+  JPN_MSG_UNIQUENESS = "が重複しています"
+
+  validates_presence_of   :name, :name_zen, :phonetic,   :message => "が必要です"
+  validates_uniqueness_of :name, :scope => :category_id, :message => JPN_MSG_UNIQUENESS
+  validates_uniqueness_of :name_zen,                     :message => JPN_MSG_UNIQUENESS
 
   HUMANIZED_KEY_NAMES = {
     'id'          => 'ID',
