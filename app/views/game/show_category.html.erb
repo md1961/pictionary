@@ -6,10 +6,16 @@
   </span>
   です。<br />
   <br />
-  次は問題が表示されます。<br />
-  絵を見て答える人は次の画面を見ないでください。<br />
-  <%= link_to "準備ができたら、ここをクリックしてください。",
-              :action => 'show_subject',
+  <% if @subject_id == 0 -%>
+    次は問題が表示されます。<br />
+    絵を見て答える人は次の画面を見ないでください。<br />
+    <% label = "準備ができたら、ここをクリックしてください。" -%>
+  <% else -%>
+    絵に文字、数字を使ってはいけません。<br />
+    <br />
+    <% label = "問題を見るには、ここをクリックしてください。" -%>
+  <% end -%>
+  <%= link_to label, :action => 'show_subject',
               :category_id => @category, :subject_id => @subject_id, :ready_to_next => @ready_to_next %>
 </div>
 
