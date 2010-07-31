@@ -18,9 +18,11 @@ class GameController < ApplicationController
     category_id = params[:category_id].to_i
     if category_id > 0
       @category = Category.find(category_id)
+      @ready_to_next = 1
     else
       categories = Category.all
       @category = categories[rand(categories.size)]
+      @ready_to_next = 0
     end
 
     @page_title = "ジャンルが決定されました"
@@ -29,6 +31,7 @@ class GameController < ApplicationController
   def show_subject
     subjects = Subject.find(:all, :conditions => ["category_id = ? and used = 0", params[:category_id]])
     @subject = subjects[rand(subjects.size)]
+    @ready_to_next = params[:ready_to_next] == '1'
 
     @page_title = "お題です"
   end
