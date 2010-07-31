@@ -23,15 +23,21 @@
      is_admin = controller_name == 'admin' -%>
 
   <body>
-    <% if defined?(@error_message) && @error_message -%>
-      <% @error_message = @error_message.join("\n") if @error_message.kind_of?(Array) -%>
-      <p class="alerting"><%= @error_message %></p>
-    <% end -%>
+    <span id="logo">
+      <%= link_to image_tag("/images/pictionary.jpg", :size => "100x40"), :controller => 'game' %>
+    </span>
 
     <% if @page_title -%>
       <% size = @page_title_size || 1
          tag = "h#{size}" -%>
       <%= "<#{tag} id='page_title'>#{@page_title}</#{tag}>" %>
+    <% end -%>
+
+    <div class="clear" />
+
+    <% if defined?(@error_message) && @error_message -%>
+      <% @error_message = @error_message.join("\n") if @error_message.kind_of?(Array) -%>
+      <p class="alerting"><%= @error_message %></p>
     <% end -%>
 
     <p style="color: green"><%= flash[:notice] %></p>

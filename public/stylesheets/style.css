@@ -1,4 +1,15 @@
 
+#logo {
+  float: left;
+  margin-right : 20px;
+  margin-bottom: 20px;
+}
+
+#top_links {
+  font-size: x-large;
+  list-style: none;
+}
+
 .table_base th {
   color: white;
   background-color: #666666;
