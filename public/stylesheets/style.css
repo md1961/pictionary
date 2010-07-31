@@ -10,6 +10,10 @@
   list-style: none;
 }
 
+.game_display_base {
+  font-size: xx-large;
+}
+
 .table_base th {
   color: white;
   background-color: #666666;
