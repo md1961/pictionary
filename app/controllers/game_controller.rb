@@ -5,8 +5,18 @@ class GameController < ApplicationController
   end
 
   def start
+    clear_subject_used
+
     redirect_to :action => 'turn'
   end
+
+    def clear_subject_used
+      Subject.find(:all, :conditions => "used = 1").each do |subject|
+        subject.used = false
+        subject.save
+      end
+    end
+    private :clear_subject_used
 
   def turn
     @category_id = 0
@@ -25,12 +35,22 @@ class GameController < ApplicationController
       @ready_to_next = 0
     end
 
+    @subject_id = params[:subject_id].to_i
+
     @page_title = "ジャンルが決定されました"
   end
 
   def show_subject
-    subjects = Subject.find(:all, :conditions => ["category_id = ? and used = 0", params[:category_id]])
-    @subject = subjects[rand(subjects.size)]
+    subject_id = params[:subject_id].to_i
+    if subject_id > 0
+      @subject = Subject.find(subject_id)
+    else
+      subjects = Subject.find(:all, :conditions => ["category_id = ? and used = 0", params[:category_id]])
+      @subject = subjects[rand(subjects.size)]
+      @subject.used = true
+      @subject.save
+    end
+
     @ready_to_next = params[:ready_to_next] == '1'
 
     @page_title = "お題です"

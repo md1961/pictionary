@@ -9,6 +9,7 @@
   次は問題が表示されます。<br />
   絵を見て答える人は次の画面を見ないでください。<br />
   <%= link_to "準備ができたら、ここをクリックしてください。",
-              :action => 'show_subject', :category_id => @category, :ready_to_next => @ready_to_next %>
+              :action => 'show_subject',
+              :category_id => @category, :subject_id => @subject_id, :ready_to_next => @ready_to_next %>
 </div>
 

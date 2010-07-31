@@ -7,7 +7,7 @@
   です。<br />
   <br />
   <%= link_to "お題を覚えたら、ここをクリックしてください。",
-              :action => 'show_category', :category_id => @subject.category %>
+              :action => 'show_category', :category_id => @subject.category, :subject_id => @subject %>
   <br />
   <% if @ready_to_next -%>
     <%= link_to "このお題を終了するには、ここをクリックしてください。", :action => 'turn' %>
