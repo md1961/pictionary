@@ -2,12 +2,13 @@
 <div class="game_display_base">
   ジャンルは
   <span style="background-color: <%= @category.color %>">
-    <%= "［#{@category.name_zen}］" %>
+    <%= "［#{@category.abbr} #{@category.name_zen}］" %>
   </span>
   です。<br />
   <br />
   次は問題が表示されます。<br />
   絵を見て答える人は次の画面を見ないでください。<br />
-  <%= link_to "準備ができたら、ここをクリックしてください。", :action => 'show_subject' %>
+  <%= link_to "準備ができたら、ここをクリックしてください。",
+              :action => 'show_subject', :category_id => @category %>
 </div>
 

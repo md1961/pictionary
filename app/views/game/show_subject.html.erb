@@ -1,0 +1,12 @@
+
+<div class="game_display_base">
+  お題は
+  <span style="background-color: <%= @subject.category.color %>">
+    <%= "［#{@subject.name_zen}（#{@subject.phonetic}, #{@subject.name}）］" %>
+  </span>
+  です。<br />
+  <br />
+  <%= link_to "お題を覚えたら、ここをクリックしてください。",
+              :action => 'show_category', :category_id => @subject.category %>
+</div>
+
