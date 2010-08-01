@@ -2,18 +2,18 @@
 <div class="game_display_base">
   まず問題のジャンルを決めます。<br />
   <br />
-  ジャンルには
   <table>
     <tr>
       <% @categories.each do |category| -%>
         <td style="background-color: <%= category.color %>">
-          <%= category.name_zen %>
+          <%= link_to "#{category.abbr} #{category.name_zen}",
+                      :action => 'show_category', :category_id => category.id %>
         </td>
       <% end -%>
     </tr>
   </table>
-  の<%= @categories.size %>つがあります。<br />
+  上からジャンルを選ぶか、下をクリックしてください。<br />
   <br />
-  <%= link_to "ジャンルを決定します", :action => 'show_category', :category_id => @category_id %>
+  <%= link_to "ジャンルをランダムに決定します", :action => 'show_category', :category_id => @category_id %>
 </div>
 

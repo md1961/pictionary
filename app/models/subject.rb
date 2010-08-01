@@ -1,9 +1,11 @@
+require 'jcode'
+
 class Subject < ActiveRecord::Base
   belongs_to :category
 
   JPN_MSG_UNIQUENESS = "が重複しています"
 
-  validates_presence_of   :name, :name_zen, :phonetic,   :message => "が必要です"
+  validates_presence_of   :name, :name_zen,              :message => "が必要です"
   validates_uniqueness_of :name, :scope => :category_id, :message => JPN_MSG_UNIQUENESS
   validates_uniqueness_of :name_zen,                     :message => JPN_MSG_UNIQUENESS
 
@@ -37,5 +39,9 @@ class Subject < ActiveRecord::Base
 
   def active?
     return is_active
+  end
+
+  def needs_phonetic?
+    return (/\A[a-zA-Zぁ-んァ-ンー]+\z/ =~ name_zen).nil?
   end
 end

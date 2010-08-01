@@ -1,10 +1,11 @@
 
 <div class="game_display_base">
   お題は
-  <span style="background-color: <%= @subject.category.color %>">
-    <%= "［#{@subject.name_zen}" %>
-    <%= "（#{@subject.phonetic}," unless @subject.name_zen == @subject.phonetic %>
-    <%= "#{@subject.name}）］" %>
+  <span>
+    <% name_zen = @subject.name_zen
+       phonetic = @subject.phonetic
+       phonetic_display = @subject.needs_phonetic? ? "#{phonetic}, " : "" -%>
+    <%= "［#{name_zen}（#{phonetic_display}#{@subject.name}）］" %>
   </span>
   です。<br />
   <br />
@@ -15,6 +16,7 @@
               :action => 'show_category', :category_id => @subject.category, :subject_id => @subject %>
   <br />
   <% if @ready_to_next -%>
+    <br />
     <%= link_to "このお題を終了するには、ここをクリックしてください。", :action => 'turn' %>
   <% end -%>
 </div>
