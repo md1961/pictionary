@@ -31,6 +31,7 @@ class GameController < ApplicationController
     private :clear_subject_used
 
   def turn
+    @categories = Category.all
     @category_id = 0
 
     @page_title = "次の問題"

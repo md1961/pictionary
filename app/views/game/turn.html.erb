@@ -1,5 +1,19 @@
 
 <div class="game_display_base">
+  まず問題のジャンルを決めます。<br />
+  <br />
+  ジャンルには
+  <table>
+    <tr>
+      <% @categories.each do |category| -%>
+        <td style="background-color: <%= category.color %>">
+          <%= category.name_zen %>
+        </td>
+      <% end -%>
+    </tr>
+  </table>
+  の<%= @categories.size %>つがあります。<br />
+  <br />
   <%= link_to "ジャンルを決定します", :action => 'show_category', :category_id => @category_id %>
 </div>
 
