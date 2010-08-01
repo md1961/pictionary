@@ -9,7 +9,8 @@
   <% @subjects.each do |subject| -%>
     <% shows_form = @subject && subject.id == @subject.id -%>
     <% unless shows_form -%>
-      <%= render :partial => 'list_row', :locals => {:subject => subject, :shows_form => shows_form} %>
+      <%= render :partial => 'list_row',
+                 :locals => {:subject => subject, :shows_form => shows_form, :listing => ! defined?(action)} %>
     <% else -%>
       <% form_for :subject, :url => {:action => action} do |f| -%>
         <%= hidden_field_tag :category_id, @category_id %>
