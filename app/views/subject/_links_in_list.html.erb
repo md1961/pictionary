@@ -17,3 +17,8 @@
   <%= link_to_if @category_id, 'すべて', :action => 'list' %>
 </span>
 
+<% form_tag :action => 'filter_by_name' do -%>
+  検索文字: <%= text_field_tag :name %>
+  <%= submit_tag '検索' %>
+<% end -%>
+

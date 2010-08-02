@@ -1,5 +1,7 @@
 class SubjectController < ApplicationController
 
+  $KCODE = 'utf8'
+
   def list
     prepare_for_list(params)
 
@@ -9,8 +11,11 @@ class SubjectController < ApplicationController
     ORDER = "phonetic"
 
     def prepare_for_list(params)
-      @category_id = params[:category_id].blank? ? nil : Integer(params[:category_id])
-      conditions = @category_id.nil? ? [] : ["category_id = ?", @category_id]
+      @category_id    = params[:category_id].blank? ? nil : Integer(params[:category_id])
+      @name_to_filter = params[:name]       .blank? ? nil : params[:name]
+      conditions = @category_id    ? ["category_id = ?", @category_id] \
+                 : @name_to_filter ? ["name regexp :name or name_zen regexp :name", {:name=>@name_to_filter}] \
+                                   : ""
       @subjects            = Subject.find(:all, :conditions => conditions, :order => ORDER)
       @column_names        = Subject.columns.map(&:name) - %w(used)
       @h_count_by_category = Subject.count_by_category
@@ -66,5 +71,12 @@ class SubjectController < ApplicationController
       prepare_for_render_new
       render :action => 'new', :category_id => @category_id
     end
+  end
+
+  def filter_by_name
+    prepare_for_list(params)
+
+    @page_title = "お題のリスト"
+    render :action => 'list'
   end
 end
