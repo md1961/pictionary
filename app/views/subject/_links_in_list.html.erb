@@ -18,7 +18,7 @@
 </span>
 
 <% form_tag :action => 'filter_by_name' do -%>
-  検索文字: <%= text_field_tag :name %>
+  検索文字: <%= text_field_tag :name_to_filter, @name_to_filter %>
   <%= submit_tag '検索' %>
 <% end -%>
 

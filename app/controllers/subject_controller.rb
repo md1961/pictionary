@@ -11,8 +11,8 @@ class SubjectController < ApplicationController
     ORDER = "phonetic"
 
     def prepare_for_list(params)
-      @category_id    = params[:category_id].blank? ? nil : Integer(params[:category_id])
-      @name_to_filter = params[:name]       .blank? ? nil : params[:name]
+      @category_id    = params[:category_id   ].blank? ? nil : Integer(params[:category_id])
+      @name_to_filter = params[:name_to_filter].blank? ? nil : params[:name_to_filter]
       conditions = @category_id    ? ["category_id = ?", @category_id] \
                  : @name_to_filter ? ["name regexp :name or name_zen regexp :name", {:name=>@name_to_filter}] \
                                    : ""
@@ -71,6 +71,12 @@ class SubjectController < ApplicationController
       prepare_for_render_new
       render :action => 'new', :category_id => @category_id
     end
+  end
+  
+  def destroy
+    Subject.find(params[:id]).destroy
+
+    redirect_to :action => 'list', :category_id => @subject.category_id
   end
 
   def filter_by_name
