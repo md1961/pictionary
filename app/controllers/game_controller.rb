@@ -43,8 +43,7 @@ class GameController < ApplicationController
       @category = Category.find(category_id)
       @ready_to_next = 1
     else
-      categories = Category.all
-      @category = categories[rand(categories.size)]
+      @category = Category.all.rand
       @ready_to_next = 0
     end
 
@@ -59,7 +58,7 @@ class GameController < ApplicationController
       @subject = Subject.find(subject_id)
     else
       subjects = Subject.find(:all, :conditions => ["category_id = ? and used = 0", params[:category_id]])
-      @subject = subjects[rand(subjects.size)]
+      @subject = subjects.rand
       @subject.used = true
       @subject.save
     end
