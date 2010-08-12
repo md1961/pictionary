@@ -76,7 +76,7 @@ class SubjectController < ApplicationController
   def destroy
     Subject.find(params[:id]).destroy
 
-    redirect_to :action => 'list', :category_id => @subject.category_id
+    redirect_to :action => 'list', :category_id => params[:category_id]
   end
 
   def filter_by_name
