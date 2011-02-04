@@ -1,4 +1,4 @@
-class SubjectController < ApplicationController
+class SubjectsController < ApplicationController
 
   $KCODE = 'utf8'
 
