@@ -1,4 +1,4 @@
-class GameController < ApplicationController
+class GamesController < ApplicationController
 
   def index
     @shows_link_to_suspended_game = suspended_game_exist?
