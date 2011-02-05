@@ -6,14 +6,13 @@
     <tr>
       <% @categories.each do |category| -%>
         <td style="background-color: <%= category.color %>">
-          <%= link_to "#{category.abbr} #{category.name_zen}",
-                      :action => 'show_category', :category_id => category.id %>
+          <%= link_to "#{category.abbr} #{category.name_zen}", show_category_path(category) %>
         </td>
       <% end -%>
     </tr>
   </table>
   上からジャンルを選ぶか、下をクリックしてください。<br />
   <br />
-  <%= link_to "ジャンルをランダムに決定します", :action => 'show_category', :category_id => @category_id %>
+  <%= link_to "ジャンルをランダムに決定します", show_category_path(@category_id) %>
 </div>
 

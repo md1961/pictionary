@@ -8,8 +8,10 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
-  map.game       'game'      , :controller => 'games', :action => 'index'
-  map.start_game 'game/start', :controller => 'games', :action => 'start'
+  map.game          'game'                  , :controller => 'games', :action => 'index'
+  map.start_game    'game/start'            , :controller => 'games', :action => 'start'
+  map.turn_game     'game/turn'             , :controller => 'games', :action => 'turn'
+  map.show_category 'game/show_category/:id', :controller => 'games', :action => 'show_category'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products

@@ -19,7 +19,7 @@ class GamesController < ApplicationController
   def start
     clear_subject_used unless params[:resuming_game] == '1'
 
-    redirect_to :action => 'turn'
+    redirect_to turn_game_path
   end
 
     def clear_subject_used
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
   end
 
   def show_category
-    category_id = params[:category_id].to_i
+    category_id = params[:id].to_i
     if category_id > 0
       @category = Category.find(category_id)
       @ready_to_next = 1
