@@ -12,7 +12,7 @@
         <% value = is_category ?  subject.category.name_zen \
                  : is_isactive ? (subject.active? ? '-' : '未使用') \
                                :  subject.send(:attributes)[column_name] -%>
-        <%= link_to_if is_id && listing, value, :action => 'edit', :id => subject, :category_id => @category_id %>
+        <%= link_to_if is_id && listing, value, edit_subject_path(subject, :category_id => @category_id) %>
       <% else -%>
         <% if @subject.new_record? && is_id -%>
           <%= nil %>
@@ -30,11 +30,10 @@
 
   <% if defined?(listing) && listing -%>
     <td>
-      <%= link_to '削除', {:action => 'destroy', :id => subject, :category_id => @category_id},
-                           :confirm => "OK to delete \"#{subject.name_zen}(#{subject.name})\"?",
-                           :class => "alertingBackground white",
-                           :method => :delete
-                           %>
+      <%= link_to '削除', subject_path(subject, :category_id => @category_id), :method => :delete,
+                          :confirm => "OK to delete \"#{subject.name_zen}(#{subject.name})\"?",
+                          :class => "alertingBackground white"
+                          %>
     </td>
   <% end -%>
 </tr>
