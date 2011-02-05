@@ -53,7 +53,7 @@ class GamesController < ApplicationController
   end
 
   def show_subject
-    subject_id = params[:subject_id].to_i
+    subject_id = params[:id].to_i
     if subject_id > 0
       @subject = Subject.find(subject_id)
     else

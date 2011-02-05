@@ -13,7 +13,7 @@
   絵に文字、数字を使ってはいけません。<br />
   <br />
   <%= link_to "お題を覚えたら、ここをクリックしてください。",
-              :action => 'show_category', :category_id => @subject.category, :subject_id => @subject %>
+              show_category_path(@subject.category, :subject_id => @subject) %>
   <br />
   <% if @ready_to_next -%>
     <br />
