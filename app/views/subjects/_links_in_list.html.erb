@@ -14,7 +14,7 @@
 
 <%= '&nbsp;' * 1 %>
 <span style="<%= @category_id ? '' : 'font-weight: bold' %>">
-  <%= link_to_if @category_id, 'すべて', :action => 'list' %>
+  <%= link_to_if @category_id, 'すべて', subjects_path %>
 </span>
 
 <% form_tag filter_by_name_subjects_path do -%>
