@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
 
   $KCODE = 'utf8'
 
-  def list
+  def index
     prepare_for_list(params)
 
     @page_title = "お題のリスト"

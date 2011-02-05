@@ -1,13 +1,13 @@
 
 <font size="+2">
-  <%= link_to 'お題の新規作成', :action => 'new', :category_id => @category_id %>
+  <%= link_to 'お題の新規作成', new_subject_path(:category_id => @category_id) %>
 </font>
 <%= '&nbsp;' * 4 %>
 
 <% @categories.each do |category| -%>
   <span style="<%= category.id != @category_id ? '' : 'font-weight: bold' %>">
     <%= link_to_unless category.id == @category_id,
-                category.name_zen, :action => 'list', :category_id => category.id %>
+                category.name_zen, subjects_path(:category_id => category.id) %>
   </span>
   <%= '&nbsp;' * 1 %>
 <% end -%>
@@ -17,7 +17,7 @@
   <%= link_to_if @category_id, 'すべて', :action => 'list' %>
 </span>
 
-<% form_tag :action => 'filter_by_name' do -%>
+<% form_tag filter_by_name_subjects_path do -%>
   検索文字: <%= text_field_tag :name_to_filter, @name_to_filter %>
   <%= submit_tag '検索' %>
 <% end -%>

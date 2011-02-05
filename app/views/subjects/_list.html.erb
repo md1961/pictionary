@@ -12,7 +12,7 @@
       <%= render :partial => 'list_row',
                  :locals => {:subject => subject, :shows_form => shows_form, :listing => ! defined?(action)} %>
     <% else -%>
-      <% form_for :subject, :url => {:action => action} do |f| -%>
+      <% form_for subject do |f| -%>
         <%= hidden_field_tag :category_id, @category_id %>
         <% unless (err_msg = f.error_messages).blank? -%>
           <tr>
@@ -28,7 +28,7 @@
           <td colspan="<%= @column_names.size %>">
             <%= submit_tag %>
             <%= '&nbsp;' * 4 %>
-            <%= link_to 'Cancel', :action => 'list', :category_id => @category_id %>
+            <%= link_to 'Cancel', subjects_path(:category_id => @category_id) %>
           </td>
         </tr>
       <% end -%>
