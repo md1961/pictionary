@@ -83,6 +83,6 @@ class SubjectsController < ApplicationController
     prepare_for_list(params)
 
     @page_title = "お題のリスト"
-    render :list
+    render :index
   end
 end
