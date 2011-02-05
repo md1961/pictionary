@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.start_game    'game/start'            , :controller => 'games', :action => 'start'
   map.turn_game     'game/turn'             , :controller => 'games', :action => 'turn'
   map.show_category 'game/show_category/:id', :controller => 'games', :action => 'show_category'
+  map.show_subject  'game/show_subject/:id' , :controller => 'games', :action => 'show_subject'
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   map.resources :products

@@ -16,7 +16,6 @@
     <br />
     <% label = "問題を見るには、ここをクリックしてください。" -%>
   <% end -%>
-  <%= link_to label, :action => 'show_subject',
-              :category_id => @category, :subject_id => @subject_id, :ready_to_next => @ready_to_next %>
+  <%= link_to label, show_subject_path(@subject_id, :category_id => @category, :ready_to_next => @ready_to_next) %>
 </div>
 
