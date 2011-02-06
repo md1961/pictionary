@@ -1,6 +1,4 @@
 # vi: set fileencoding=utf-8 :
-require 'jcode'
-
 class Subject < ActiveRecord::Base
   belongs_to :category
 
