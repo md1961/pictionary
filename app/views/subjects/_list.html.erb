@@ -1,4 +1,6 @@
 
+<% listing = false unless defined?(listing) -%>
+
 <table id="table_subject_list" class="table_base">
   <tr>
     <% @column_names.each do |column_name| -%>
@@ -10,7 +12,7 @@
     <% shows_form = @subject && subject.id == @subject.id -%>
     <% unless shows_form -%>
       <%= render :partial => 'list_row',
-                 :locals => {:subject => subject, :shows_form => shows_form, :listing => ! defined?(action)} %>
+                 :locals => {:subject => subject, :shows_form => shows_form, :listing => listing} %>
     <% else -%>
       <% form_for subject do |f| -%>
         <%= hidden_field_tag :category_id, @category_id %>
