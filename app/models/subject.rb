@@ -27,13 +27,15 @@ class Subject < ActiveRecord::Base
     column_category = 'category_id'
     column_count    = 'COUNT(*)'
     sql = "SELECT #{column_category}, #{column_count} FROM subjects GROUP BY #{column_category}"
-    hashes =  connection.execute(sql).all_hashes
-    return hashes.inject(Hash.new) { |h, h_row|
-      category_id = Integer(h_row[column_category])
-      count       = Integer(h_row[column_count   ])
-      h[category_id] = count
-      h
-    }
+
+    hash_counts = Hash.new
+    connection.execute(sql).each_hash do |hash|
+      category_id = Integer(hash[column_category])
+      count       = Integer(hash[column_count   ])
+      hash_counts[category_id] = count
+    end
+
+    return hash_counts
   end
 
   def active?
