@@ -1,3 +1,4 @@
+# vi: set fileencoding=utf-8 :
 class GamesController < ApplicationController
 
   def index
