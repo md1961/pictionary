@@ -1,0 +1,21 @@
+
+<div class="game_display_base">
+  ジャンルは
+  <span style="background-color: <%= @category.color %>">
+    <%= "［#{@category.abbr} #{@category.name_zen}］" %>
+  </span>
+  です。<br />
+  <br />
+  <% if @subject_id == 0 -%>
+    次は問題が表示されます。<br />
+    絵を見て答える人は次の画面を見ないでください。<br />
+    <br />
+    <% label = "準備ができたら、ここをクリックしてください。" -%>
+  <% else -%>
+    絵に文字、数字を使ってはいけません。<br />
+    <br />
+    <% label = "問題を見るには、ここをクリックしてください。" -%>
+  <% end -%>
+  <%= link_to label, show_subject_path(@subject_id, :category_id => @category, :ready_to_next => @ready_to_next) %>
+</div>
+

@@ -9,6 +9,11 @@ Pictionary::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+  match 'game'                  => 'games#index'        , :as => :game
+  match 'game/start'            => 'games#start'        , :as => :start_game
+  match 'game/turn'             => 'games#turn'         , :as => :turn_game
+  match 'game/show_category/:id'=> 'games#show_category', :as => :show_category
+  match 'game/show_subject/:id' => 'games#show_subject' , :as => :show_subject
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -24,6 +29,11 @@ Pictionary::Application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  resources :subjects do
+    collection do
+      post :filter_by_name
+    end
+  end
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -49,6 +59,7 @@ Pictionary::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
+  root 'games#index'
 
   # See how all your routes lay out with "rake routes"
 

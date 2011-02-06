@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Pictionary</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
-</head>
-<body>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
-<%= yield %>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title><%= "#{Constant.get(:application_name)}: #{@page_title}" %></title>
 
-</body>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+    <% if @css_add
+         @css_add.each do |css| -%>
+        <%= stylesheet_link_tag css %>
+      <% end
+         @css_add.clear -%>
+    <% end -%>
+
+    <%= javascript_include_tag 'prototype' %>
+  </head>
+
+  <% controller_name = controller.controller_name
+     is_admin = controller_name == 'admin' -%>
+
+  <body>
+    <span id="logo">
+      <%= link_to image_tag("/images/pictionary.jpg", :size => "100x40"), game_path %>
+    </span>
+
+    <% if @page_title -%>
+      <% size = @page_title_size || 1
+         tag = "h#{size}" -%>
+      <%= "<#{tag} id='page_title'>#{@page_title}</#{tag}>" %>
+    <% end -%>
+
+    <div class="clear" />
+
+    <% if defined?(@error_message) && @error_message -%>
+      <% @error_message = @error_message.join("\n") if @error_message.kind_of?(Array) -%>
+      <p class="alerting"><%= @error_message %></p>
+    <% end -%>
+
+    <p style="color: green"><%= flash[:notice] %></p>
+
+    <%= yield %>
+
+    <% unless is_admin -%>
+      <p class="copyright">
+        <%= Constant.get('copyright') %>
+      </p>
+    <% end -%>
+  </body>
+
 </html>
+

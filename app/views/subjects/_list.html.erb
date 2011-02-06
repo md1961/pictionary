@@ -1,0 +1,40 @@
+
+<% listing = false unless defined?(listing) -%>
+
+<table id="table_subject_list" class="table_base">
+  <tr>
+    <% @column_names.each do |column_name| -%>
+      <th><%= Subject.human_attribute_name(column_name) %></th>
+    <% end -%>
+  </tr>
+
+  <% @subjects.each do |subject| -%>
+    <% shows_form = @subject && subject.id == @subject.id -%>
+    <% unless shows_form -%>
+      <%= render :partial => 'list_row',
+                 :locals => {:subject => subject, :shows_form => shows_form, :listing => listing} %>
+    <% else -%>
+      <% form_for subject do |f| -%>
+        <%= hidden_field_tag :category_id, @category_id %>
+        <% unless (err_msg = f.error_messages).blank? -%>
+          <tr>
+            <td colspan="<%= @column_names.size %>">
+              <%= err_msg %>
+            </td>
+          </tr>
+        <% end -%>
+
+        <%= render :partial => 'list_row', :locals => {:shows_form => shows_form, :f => f} %>
+
+        <tr>
+          <td colspan="<%= @column_names.size %>">
+            <%= submit_tag %>
+            <%= '&nbsp;' * 4 %>
+            <%= link_to 'Cancel', subjects_path(:category_id => @category_id) %>
+          </td>
+        </tr>
+      <% end -%>
+    <% end -%>
+  <% end -%>
+</table>
+

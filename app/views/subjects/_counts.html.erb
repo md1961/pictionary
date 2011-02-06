@@ -1,0 +1,24 @@
+
+<table class="table_base" id="table_subject_counts">
+  <tr>
+    <th>カテゴリー</th>
+    <th>個数</th>
+  </tr>
+
+  <% total_count = 0 -%>
+
+  <% @categories.each do |category| -%>
+    <% count = @h_count_by_category[category.id]
+       total_count += count                      -%>
+    <tr>
+      <td>              <%= category.name_zen %></td>
+      <td align="right"><%= count %>            </td>
+    </tr>
+  <% end -%>
+
+  <tr>
+    <td align="center"><%= justify('合計', 4) %></td>
+    <td align="right" ><%= total_count %>       </td>
+  </tr>
+</table>
+

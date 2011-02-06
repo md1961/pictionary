@@ -1,0 +1,15 @@
+
+<ul id="top_links">
+  <li>
+    <%= link_to 'ゲーム開始', start_game_path %>
+  </li>
+  <% if @shows_link_to_suspended_game -%>
+    <li>
+      <%= link_to 'ゲーム再開', start_game_path(:resuming_game => 1) %>
+    </li>
+  <% end -%>
+  <li>
+    <%= link_to 'お題のリスト／編集／新規作成', subjects_path %>
+  </li>
+</ul>
+
