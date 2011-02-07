@@ -18,7 +18,7 @@ class Subject < ActiveRecord::Base
   }
 
   class << self
-    def human_attribute_name(name)
+    def human_attribute_name(name, options={})
       return HUMANIZED_KEY_NAMES[name] || super
     end
   end
