@@ -5,6 +5,7 @@ module ApplicationHelper
   end
 
   def justify(str, num_spaces_between)
-    return str.split(//).join('&nbsp;' * num_spaces_between)
+    joint = '&nbsp;' * num_spaces_between
+    return sanitize(str).split(//).join(joint).html_safe
   end
 end
