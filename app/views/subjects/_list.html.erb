@@ -16,10 +16,10 @@
     <% else -%>
       <% form_for subject do |f| -%>
         <%= hidden_field_tag :category_id, @category_id %>
-        <% unless (err_msg = f.error_messages).blank? -%>
+        <% unless subject.errors.empty? -%>
           <tr>
             <td colspan="<%= @column_names.size %>">
-              <%= err_msg %>
+              <%= error_messages_for(subject) %>
             </td>
           </tr>
         <% end -%>

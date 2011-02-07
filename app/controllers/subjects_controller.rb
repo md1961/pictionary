@@ -57,7 +57,7 @@ class SubjectsController < ApplicationController
   end
 
     def prepare_for_render_new
-      @subjects.insert(0, Subject.new)
+      @subjects.insert(0, @subject)
       @page_title  = "お題の作成"
       @page_title += "（#{Category.find(@category_id).name_zen}）" if @category_id
     end
