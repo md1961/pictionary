@@ -29,7 +29,7 @@
         <tr>
           <td colspan="<%= @column_names.size %>">
             <%= submit_tag %>
-            <%= '&nbsp;' * 4 %>
+            <%= nbsp(4) %>
             <%= link_to 'Cancel', subjects_path(:category_id => @category_id) %>
           </td>
         </tr>
