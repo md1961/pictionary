@@ -14,8 +14,8 @@
                                :  subject.send(:attributes)[column_name] -%>
         <%= link_to_if is_id && listing, value, edit_subject_path(subject, :category_id => @category_id) %>
       <% else -%>
-        <% if @subject.new_record? && is_id -%>
-          <%= nil %>
+        <% if is_id -%>
+          <%= @subject.new_record? ? nil : @subject.id %>
         <% elsif is_category -%>
           <%= f.collection_select :category_id, @categories, :id, :name_zen %>
         <% elsif is_isactive -%>
