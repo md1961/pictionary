@@ -1,8 +1,6 @@
 # vi: set fileencoding=utf-8 :
 class SubjectsController < ApplicationController
 
-  $KCODE = 'utf8'
-
   def index
     prepare_for_list(params)
 
@@ -32,6 +30,8 @@ class SubjectsController < ApplicationController
   end
 
     def prepare_for_render_edit
+      @subjects.delete(@subject)
+      @subjects.unshift(@subject)
       @page_title = "お題「#{@subject.name_zen}」の編集"
     end
     private :prepare_for_render_edit
